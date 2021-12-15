@@ -1,0 +1,1488 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/38aa86de2d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://18.117.229.198/finder/css/style.css"/>
+  <audio id="sound" style="display: none;"><source src="notification.ogg" type="audio/ogg"></audio>
+  <title>Crash-Finders</title>
+  <link rel="icon" type="image/x-icon" href="https://18.117.229.198/finder/img/favicon.ico">
+  <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000000;
+            }
+
+            #main-container {
+                margin: 0;
+                padding: 5px 100px;
+                background-color: #000000;
+                color: white;
+            }
+
+            #main-table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: #000000;
+            }
+
+            #main-table tbody {
+            }
+            
+            #main-table th, #main-table td{
+                border: 1px solid rgb(43, 43, 43);
+                padding: 4px;
+            }
+
+            #main-table tr:hover {
+                background-color: rgb(43, 43, 43);
+            }
+
+            #main-table th {
+                background-color: black;
+            }
+
+            #main-table .avatar-cell {
+                background-size: 48px !important;
+                background-position: center !important;
+                height: 48px;
+                width: 48px;
+                padding: 1px;
+                cursor: pointer;
+            }
+
+            #main-table .copy-text-button {
+                display: inline-block;
+                border-radius: 4px;
+                background-color: green;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                padding: 5px;
+                width: 50px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+
+            #main-table .copy-text-button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            #main-table .listing-row.visited {
+                background-color: #000000;
+                color: #dadada;
+            }
+            a:link {
+            color: rgb(255, 255, 255);
+            background-color: transparent;
+            text-decoration: none;
+            }
+
+            a:visited {
+            color: rgb(0, 150, 255);
+            background-color: transparent;
+            text-decoration: none;
+            }
+
+            a:hover {
+            color: rgb(255, 0, 0);
+            background-color: transparent;
+            text-decoration: underline;
+            }
+
+            a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+            }
+.button {
+border: none; 
+color: red;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}				
+        </style>
+    </head>
+		<!-- Page Preloder -->
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="container">
+			<!-- logo -->
+			<a class="site-logo" href="index.html">
+				<img src="https://18.117.229.198/finder/img/logo.png" alt="">
+			</a>
+			<div class="user-panel">
+<div id="searchcolumn">
+			      <form id = "search-form">
+               <label style="color: red" for="maxprice">მინიმალური. ფასი:</label>
+                <input type="number" min="30" max="2000" name="minprice" value="300">
+                <label style="color: red" for="maxprice">მაქსიმალური ფასი:</label>
+                <input type="number" min="30" max="2000" name="maxprice" value="2000">
+                <button class="buttonser" on click="document.getElementById('search-form').submit()">🔍</button>
+				<link rel="icon" href="dc.png" type="image/gif" sizes="16x16">
+            </form>
+</div>
+        <div class="image" style="padding-top:22x; color:black; font-size:22px; text-align: center;"> დიზაინი დამზადებულია <i class="fa fa-heart pulse_heart" original-title="Love"></i><a href="https://www.facebook.com/NeonMnatebeli" target="_blank" style="padding-top:22x; color:red; font-size:22px; text-align: center;">Neon-ის მიერ</a>
+</select>
+</div>
+</div>
+			</div>
+			<!-- responsive -->
+			<div class="nav-switch">
+			</div>
+			<!-- site menu -->
+			<nav class="main-menu">
+				<ul>
+				</ul>
+			</nav>
+      </div>
+            <table class="table" style="color: red">
+                <tbody>
+                    <tr>
+                    <th>ფოტო</th>
+                    <th>სახელი</th>
+					<th>დააკოპირე ტექსტი</th>
+                    <th>ნივთი</th>
+                    <th>ფასი</th>
+					<th>დრო</th>
+                    </tr>
+					
+                
+                <tr class="listing-row" id="lr-60/600a54e62405d2696730eabca74233adfd9aea7e-勺哥儿">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('60/600a54e62405d2696730eabca74233adfd9aea7e', '勺哥儿')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/60/600a54e62405d2696730eabca74233adfd9aea7e.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=勺哥儿&avatar=60/600a54e62405d2696730eabca74233adfd9aea7e"
+                        target="_blank"> </button> 勺哥儿 </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('AWP | Silk Tiger (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('AWP | Silk Tiger (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('AWP | Silk Tiger (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>AWP | Silk Tiger (Factory New)</td>
+                    <td>$319</td>
+					<td>2021-12-15 08:12:25.780483</td>
+                </tr>                    
+                
+                <tr class="listing-row" id="lr-1a/1a621de539218129957f99b342137d39682c5374-nonflex">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('1a/1a621de539218129957f99b342137d39682c5374', 'nonflex')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/1a/1a621de539218129957f99b342137d39682c5374.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=nonflex&avatar=1a/1a621de539218129957f99b342137d39682c5374"
+                        target="_blank"> </button> nonflex </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Driver Gloves | Imperial Plaid (Well-Worn)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Driver Gloves | Imperial Plaid (Well-Worn)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Driver Gloves | Imperial Plaid (Well-Worn)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Driver Gloves | Imperial Plaid (Well-Worn)</td>
+                    <td>$345</td>
+					<td>2021-12-14 20:13:24.960865</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-cf/cfc14eb2136c694d92bbb14aa25986d7b335c79e-bongus">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('cf/cfc14eb2136c694d92bbb14aa25986d7b335c79e', 'bongus')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cf/cfc14eb2136c694d92bbb14aa25986d7b335c79e.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=bongus&avatar=cf/cfc14eb2136c694d92bbb14aa25986d7b335c79e"
+                        target="_blank"> </button> bongus </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Butterfly Knife | Ultraviolet (Battle-Scarred)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Butterfly Knife | Ultraviolet (Battle-Scarred)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Butterfly Knife | Ultraviolet (Battle-Scarred)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Butterfly Knife | Ultraviolet (Battle-Scarred)</td>
+                    <td>$428</td>
+					<td>2021-12-14 20:11:57.104116</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-92/9216863eae1f6631b0fa2cf45cf01b10682cfbf5-LINUS">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('92/9216863eae1f6631b0fa2cf45cf01b10682cfbf5', 'LINUS')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/92/9216863eae1f6631b0fa2cf45cf01b10682cfbf5.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=LINUS&avatar=92/9216863eae1f6631b0fa2cf45cf01b10682cfbf5"
+                        target="_blank"> </button> LINUS </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Sport Gloves | Vice (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Sport Gloves | Vice (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Sport Gloves | Vice (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Sport Gloves | Vice (Field-Tested)</td>
+                    <td>$1423</td>
+					<td>2021-12-14 20:10:44.026879</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-d3/d3fa79f5042b61d0abecc44507318fba9a1fcb19-Kody...">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('d3/d3fa79f5042b61d0abecc44507318fba9a1fcb19', 'Kody...')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d3/d3fa79f5042b61d0abecc44507318fba9a1fcb19.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Kody...&avatar=d3/d3fa79f5042b61d0abecc44507318fba9a1fcb19"
+                        target="_blank"> </button> Kody... </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Talon Knife | Crimson Web (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Talon Knife | Crimson Web (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Talon Knife | Crimson Web (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Talon Knife | Crimson Web (Field-Tested)</td>
+                    <td>$315</td>
+					<td>2021-12-14 20:10:03.002677</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-ef/ef2b702391e9054ce8830c6021d0bf82c3592eb8-Я МАНДАРИН">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('ef/ef2b702391e9054ce8830c6021d0bf82c3592eb8', 'Я МАНДАРИН')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ef/ef2b702391e9054ce8830c6021d0bf82c3592eb8.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Я МАНДАРИН&avatar=ef/ef2b702391e9054ce8830c6021d0bf82c3592eb8"
+                        target="_blank"> </button> Я МАНДАРИН </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Bright Water (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Bright Water (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Bright Water (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Bright Water (Field-Tested)</td>
+                    <td>$367</td>
+					<td>2021-12-14 20:09:42.917056</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd-SPLASH">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd', 'SPLASH')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=SPLASH&avatar=4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd"
+                        target="_blank"> </button> SPLASH </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Hand Wraps | Cobalt Skulls (Battle-Scarred)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Hand Wraps | Cobalt Skulls (Battle-Scarred)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Hand Wraps | Cobalt Skulls (Battle-Scarred)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Hand Wraps | Cobalt Skulls (Battle-Scarred)</td>
+                    <td>$1223</td>
+					<td>2021-12-14 20:09:30.607570</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd-SPLASH">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd', 'SPLASH')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=SPLASH&avatar=4b/4bfe5e6f9fa33a1f87585b5e2eee25abedab12fd"
+                        target="_blank"> </button> SPLASH </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Bayonet | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Bayonet | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Bayonet | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Bayonet | Doppler (Factory New)</td>
+                    <td>$679</td>
+					<td>2021-12-14 20:09:06.925844</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-ac/acf67207768cdc5be5f09aca6a9f7830bf27d6f7-xVeSsa">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('ac/acf67207768cdc5be5f09aca6a9f7830bf27d6f7', 'xVeSsa')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ac/acf67207768cdc5be5f09aca6a9f7830bf27d6f7.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=xVeSsa&avatar=ac/acf67207768cdc5be5f09aca6a9f7830bf27d6f7"
+                        target="_blank"> </button> xVeSsa </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Moto Gloves | Turtle (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Moto Gloves | Turtle (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Moto Gloves | Turtle (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Moto Gloves | Turtle (Field-Tested)</td>
+                    <td>$365</td>
+					<td>2021-12-14 20:06:28.052061</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-25/256bc5525911b88ccb023e29a80a932a7bd68db3-Sstokic">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('25/256bc5525911b88ccb023e29a80a932a7bd68db3', 'Sstokic')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/25/256bc5525911b88ccb023e29a80a932a7bd68db3.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Sstokic&avatar=25/256bc5525911b88ccb023e29a80a932a7bd68db3"
+                        target="_blank"> </button> Sstokic </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Paracord Knife | Slaughter (Minimal Wear)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Paracord Knife | Slaughter (Minimal Wear)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Paracord Knife | Slaughter (Minimal Wear)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Paracord Knife | Slaughter (Minimal Wear)</td>
+                    <td>$564</td>
+					<td>2021-12-14 20:06:08.508267</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-7d/7d25f0d1c625ee6be8df1af1887dd12ed1a09a7e-Kraglik">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('7d/7d25f0d1c625ee6be8df1af1887dd12ed1a09a7e', 'Kraglik')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/7d/7d25f0d1c625ee6be8df1af1887dd12ed1a09a7e.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Kraglik&avatar=7d/7d25f0d1c625ee6be8df1af1887dd12ed1a09a7e"
+                        target="_blank"> </button> Kraglik </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Specialist Gloves | Marble Fade (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Specialist Gloves | Marble Fade (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Specialist Gloves | Marble Fade (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Specialist Gloves | Marble Fade (Field-Tested)</td>
+                    <td>$459</td>
+					<td>2021-12-14 20:05:33.313821</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb-Jolly">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb', 'Jolly')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Jolly&avatar=fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb"
+                        target="_blank"> </button> Jolly </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('StatTrak™ M4A1-S | Printstream (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('StatTrak™ M4A1-S | Printstream (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('StatTrak™ M4A1-S | Printstream (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>StatTrak™ M4A1-S | Printstream (Factory New)</td>
+                    <td>$609</td>
+					<td>2021-12-14 20:03:42.740020</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-8c/8c8e4a35bf13e8f76df911e2550a6e03ec452df3-Black">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('8c/8c8e4a35bf13e8f76df911e2550a6e03ec452df3', 'Black')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/8c/8c8e4a35bf13e8f76df911e2550a6e03ec452df3.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Black&avatar=8c/8c8e4a35bf13e8f76df911e2550a6e03ec452df3"
+                        target="_blank"> </button> Black </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Night (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Night (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Night (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Night (Field-Tested)</td>
+                    <td>$319</td>
+					<td>2021-12-14 20:01:59.051518</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-9c/9ca5fd4dbb729776cc92fbd7e4d1a3996be1de80-ParagonCZ">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('9c/9ca5fd4dbb729776cc92fbd7e4d1a3996be1de80', 'ParagonCZ')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/9c/9ca5fd4dbb729776cc92fbd7e4d1a3996be1de80.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=ParagonCZ&avatar=9c/9ca5fd4dbb729776cc92fbd7e4d1a3996be1de80"
+                        target="_blank"> </button> ParagonCZ </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ StatTrak™ Karambit | Freehand (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ StatTrak™ Karambit | Freehand (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ StatTrak™ Karambit | Freehand (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ StatTrak™ Karambit | Freehand (Field-Tested)</td>
+                    <td>$406</td>
+					<td>2021-12-14 20:01:43.651403</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-4b/4b6079a40e81c70ddcd81de03111cbfbcc592e5e-CR3TIC4L">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('4b/4b6079a40e81c70ddcd81de03111cbfbcc592e5e', 'CR3TIC4L')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4b/4b6079a40e81c70ddcd81de03111cbfbcc592e5e.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=CR3TIC4L&avatar=4b/4b6079a40e81c70ddcd81de03111cbfbcc592e5e"
+                        target="_blank"> </button> CR3TIC4L </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Talon Knife | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Talon Knife | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Talon Knife | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Talon Knife | Doppler (Factory New)</td>
+                    <td>$565</td>
+					<td>2021-12-14 20:01:38.610127</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-da/da903a88945585696ce3aa3d38a1732107d01714-djoksi">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('da/da903a88945585696ce3aa3d38a1732107d01714', 'djoksi')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/da/da903a88945585696ce3aa3d38a1732107d01714.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=djoksi&avatar=da/da903a88945585696ce3aa3d38a1732107d01714"
+                        target="_blank"> </button> djoksi </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Paracord Knife | Fade (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Paracord Knife | Fade (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Paracord Knife | Fade (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Paracord Knife | Fade (Factory New)</td>
+                    <td>$568</td>
+					<td>2021-12-14 20:01:17.545475</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-10/100a5b7a94278fa792babd4ce769d3d2c9e3b6f8-[4E]">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('10/100a5b7a94278fa792babd4ce769d3d2c9e3b6f8', '[4E]')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/10/100a5b7a94278fa792babd4ce769d3d2c9e3b6f8.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=[4E]&avatar=10/100a5b7a94278fa792babd4ce769d3d2c9e3b6f8"
+                        target="_blank"> </button> [4E] </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Paracord Knife | Fade (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Paracord Knife | Fade (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Paracord Knife | Fade (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Paracord Knife | Fade (Factory New)</td>
+                    <td>$572</td>
+					<td>2021-12-14 20:00:00.269318</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-3f/3f30cb58ef274492f19ef23fdb44ba8f33cfa51f-sametrog">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('3f/3f30cb58ef274492f19ef23fdb44ba8f33cfa51f', 'sametrog')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/3f/3f30cb58ef274492f19ef23fdb44ba8f33cfa51f.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=sametrog&avatar=3f/3f30cb58ef274492f19ef23fdb44ba8f33cfa51f"
+                        target="_blank"> </button> sametrog </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Gamma Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Gamma Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Gamma Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Gamma Doppler (Factory New)</td>
+                    <td>$789</td>
+					<td>2021-12-14 19:58:59.609326</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-29/292c24c736e3f6a16d1b0acc938820cb44b3ff27-Jim Fixed It">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('29/292c24c736e3f6a16d1b0acc938820cb44b3ff27', 'Jim Fixed It')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/29/292c24c736e3f6a16d1b0acc938820cb44b3ff27.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Jim Fixed It&avatar=29/292c24c736e3f6a16d1b0acc938820cb44b3ff27"
+                        target="_blank"> </button> Jim Fixed It </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ StatTrak™ Talon Knife | Damascus Steel (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ StatTrak™ Talon Knife | Damascus Steel (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ StatTrak™ Talon Knife | Damascus Steel (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ StatTrak™ Talon Knife | Damascus Steel (Factory New)</td>
+                    <td>$397</td>
+					<td>2021-12-14 19:56:02.796395</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-02/02c27b5d00a50bea24c91e6978fdab1c264e9081-rkr">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('02/02c27b5d00a50bea24c91e6978fdab1c264e9081', 'rkr')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/02/02c27b5d00a50bea24c91e6978fdab1c264e9081.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=rkr&avatar=02/02c27b5d00a50bea24c91e6978fdab1c264e9081"
+                        target="_blank"> </button> rkr </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('M4A1-S | Blue Phosphor (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('M4A1-S | Blue Phosphor (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('M4A1-S | Blue Phosphor (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>M4A1-S | Blue Phosphor (Factory New)</td>
+                    <td>$360</td>
+					<td>2021-12-14 19:55:05.029475</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-1e/1e57703131cf8186b718a639fef502a8e551345c-dG">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('1e/1e57703131cf8186b718a639fef502a8e551345c', 'dG')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/1e/1e57703131cf8186b718a639fef502a8e551345c.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=dG&avatar=1e/1e57703131cf8186b718a639fef502a8e551345c"
+                        target="_blank"> </button> dG </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Stained (Well-Worn)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Stained (Well-Worn)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Stained (Well-Worn)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Stained (Well-Worn)</td>
+                    <td>$407</td>
+					<td>2021-12-14 19:54:59.719197</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-11/11f5640d729a9d73b57e945704d5a22b91c74bc7-Dickomb">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('11/11f5640d729a9d73b57e945704d5a22b91c74bc7', 'Dickomb')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/11/11f5640d729a9d73b57e945704d5a22b91c74bc7.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Dickomb&avatar=11/11f5640d729a9d73b57e945704d5a22b91c74bc7"
+                        target="_blank"> </button> Dickomb </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Skeleton Knife | Case Hardened (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Skeleton Knife | Case Hardened (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Skeleton Knife | Case Hardened (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Skeleton Knife | Case Hardened (Field-Tested)</td>
+                    <td>$555</td>
+					<td>2021-12-14 19:53:41.351803</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-c6/c601c346f2cc749bccc8298f5d33ed5c541d50ae-Cr4zyTyge®">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('c6/c601c346f2cc749bccc8298f5d33ed5c541d50ae', 'Cr4zyTyge®')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c6/c601c346f2cc749bccc8298f5d33ed5c541d50ae.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Cr4zyTyge®&avatar=c6/c601c346f2cc749bccc8298f5d33ed5c541d50ae"
+                        target="_blank"> </button> Cr4zyTyge® </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Talon Knife | Boreal Forest (Well-Worn)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Talon Knife | Boreal Forest (Well-Worn)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Talon Knife | Boreal Forest (Well-Worn)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Talon Knife | Boreal Forest (Well-Worn)</td>
+                    <td>$338</td>
+					<td>2021-12-14 19:51:36.877570</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-83/83fc56ce57380dd9839f9c44459c5691a46072c2-kao the kangaroo (unhinged)">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('83/83fc56ce57380dd9839f9c44459c5691a46072c2', 'kao the kangaroo (unhinged)')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/83/83fc56ce57380dd9839f9c44459c5691a46072c2.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=kao the kangaroo (unhinged)&avatar=83/83fc56ce57380dd9839f9c44459c5691a46072c2"
+                        target="_blank"> </button> kao the kangaroo (unhinged) </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Tiger Tooth (Minimal Wear)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Tiger Tooth (Minimal Wear)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Tiger Tooth (Minimal Wear)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Tiger Tooth (Minimal Wear)</td>
+                    <td>$1300</td>
+					<td>2021-12-14 19:50:14.601612</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-56/569d306d4f8f6fce374a4f29735db881c4072ac6-sikez">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('56/569d306d4f8f6fce374a4f29735db881c4072ac6', 'sikez')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/56/569d306d4f8f6fce374a4f29735db881c4072ac6.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=sikez&avatar=56/569d306d4f8f6fce374a4f29735db881c4072ac6"
+                        target="_blank"> </button> sikez </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Specialist Gloves | Crimson Web (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Specialist Gloves | Crimson Web (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Specialist Gloves | Crimson Web (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Specialist Gloves | Crimson Web (Field-Tested)</td>
+                    <td>$499</td>
+					<td>2021-12-14 19:49:32.826862</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-18/186e8adf94649e7743b58b189287bbb70e92acdb-Krotkoff">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('18/186e8adf94649e7743b58b189287bbb70e92acdb', 'Krotkoff')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/18/186e8adf94649e7743b58b189287bbb70e92acdb.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Krotkoff&avatar=18/186e8adf94649e7743b58b189287bbb70e92acdb"
+                        target="_blank"> </button> Krotkoff </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Stained (Well-Worn)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Stained (Well-Worn)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Stained (Well-Worn)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Stained (Well-Worn)</td>
+                    <td>$394</td>
+					<td>2021-12-14 19:49:32.817251</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-f2/f261b406b4266af40c951139fc2804fd689c43a6-DOGGY">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('f2/f261b406b4266af40c951139fc2804fd689c43a6', 'DOGGY')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f2/f261b406b4266af40c951139fc2804fd689c43a6.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=DOGGY&avatar=f2/f261b406b4266af40c951139fc2804fd689c43a6"
+                        target="_blank"> </button> DOGGY </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Bayonet | Fade (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Bayonet | Fade (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Bayonet | Fade (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Bayonet | Fade (Factory New)</td>
+                    <td>$1127</td>
+					<td>2021-12-14 19:49:16.647376</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-3c/3cd4efa82e39ffd24e61a770cd428e6eb146a5f5--Esep">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('3c/3cd4efa82e39ffd24e61a770cd428e6eb146a5f5', '-Esep')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/3c/3cd4efa82e39ffd24e61a770cd428e6eb146a5f5.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=-Esep&avatar=3c/3cd4efa82e39ffd24e61a770cd428e6eb146a5f5"
+                        target="_blank"> </button> -Esep </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ M9 Bayonet | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ M9 Bayonet | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ M9 Bayonet | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ M9 Bayonet | Doppler (Factory New)</td>
+                    <td>$553</td>
+					<td>2021-12-14 19:44:39.828543</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb-angelcoyness">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb', 'angelcoyness')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=angelcoyness&avatar=fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb"
+                        target="_blank"> </button> angelcoyness </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('Sticker | Snax (Gold) | Krakow 2017')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('Sticker | Snax (Gold) | Krakow 2017')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('Sticker | Snax (Gold) | Krakow 2017')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>Sticker | Snax (Gold) | Krakow 2017</td>
+                    <td>$524</td>
+					<td>2021-12-14 19:43:48.769798</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-20/202de1dfdd8f7a72673444a74b7fe9d2c1dcd95c-★ Pegion">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('20/202de1dfdd8f7a72673444a74b7fe9d2c1dcd95c', '★ Pegion')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/20/202de1dfdd8f7a72673444a74b7fe9d2c1dcd95c.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=★ Pegion&avatar=20/202de1dfdd8f7a72673444a74b7fe9d2c1dcd95c"
+                        target="_blank"> </button> ★ Pegion </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Navaja Knife | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Navaja Knife | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Navaja Knife | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Navaja Knife | Doppler (Factory New)</td>
+                    <td>$677</td>
+					<td>2021-12-14 19:41:29.756962</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb-80eljou">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb', '80eljou')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=80eljou&avatar=fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb"
+                        target="_blank"> </button> 80eljou </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Driver Gloves | Snow Leopard (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Driver Gloves | Snow Leopard (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Driver Gloves | Snow Leopard (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Driver Gloves | Snow Leopard (Field-Tested)</td>
+                    <td>$1015</td>
+					<td>2021-12-14 19:40:47.285503</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-02/029de41a7913984586be9a0c13b094e01ed3320b-WUC">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('02/029de41a7913984586be9a0c13b094e01ed3320b', 'WUC')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/02/029de41a7913984586be9a0c13b094e01ed3320b.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=WUC&avatar=02/029de41a7913984586be9a0c13b094e01ed3320b"
+                        target="_blank"> </button> WUC </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Sport Gloves | Arid (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Sport Gloves | Arid (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Sport Gloves | Arid (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Sport Gloves | Arid (Field-Tested)</td>
+                    <td>$549</td>
+					<td>2021-12-14 19:39:36.386110</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-93/936c5b7d70479820371da5f3f13edd85142c5568-Helsinki">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('93/936c5b7d70479820371da5f3f13edd85142c5568', 'Helsinki')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/93/936c5b7d70479820371da5f3f13edd85142c5568.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Helsinki&avatar=93/936c5b7d70479820371da5f3f13edd85142c5568"
+                        target="_blank"> </button> Helsinki </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Talon Knife | Case Hardened (Battle-Scarred)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Talon Knife | Case Hardened (Battle-Scarred)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Talon Knife | Case Hardened (Battle-Scarred)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Talon Knife | Case Hardened (Battle-Scarred)</td>
+                    <td>$1622</td>
+					<td>2021-12-14 19:39:24.685125</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-c9/c901c464a60c02b379fd482ff5d43a43980cbcc8-✪ Pistol Emil">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('c9/c901c464a60c02b379fd482ff5d43a43980cbcc8', '✪ Pistol Emil')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/c9/c901c464a60c02b379fd482ff5d43a43980cbcc8.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=✪ Pistol Emil&avatar=c9/c901c464a60c02b379fd482ff5d43a43980cbcc8"
+                        target="_blank"> </button> ✪ Pistol Emil </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('Desert Eagle | Blaze (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('Desert Eagle | Blaze (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('Desert Eagle | Blaze (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>Desert Eagle | Blaze (Factory New)</td>
+                    <td>$1297</td>
+					<td>2021-12-14 19:39:11.519196</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-82/82117d946b2d9a89ab65a13cb2836d39de148c90-fOKUS">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('82/82117d946b2d9a89ab65a13cb2836d39de148c90', 'fOKUS')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/82/82117d946b2d9a89ab65a13cb2836d39de148c90.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=fOKUS&avatar=82/82117d946b2d9a89ab65a13cb2836d39de148c90"
+                        target="_blank"> </button> fOKUS </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ M9 Bayonet | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ M9 Bayonet | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ M9 Bayonet | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ M9 Bayonet | Doppler (Factory New)</td>
+                    <td>$538</td>
+					<td>2021-12-14 19:39:07.632660</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-63/6330c0531c83e7262767b52a29728f6801bcc289-☣ 𝕭𝖔𝖍𝖆𝖙𝖎 ☣">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('63/6330c0531c83e7262767b52a29728f6801bcc289', '☣ 𝕭𝖔𝖍𝖆𝖙𝖎 ☣')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/63/6330c0531c83e7262767b52a29728f6801bcc289.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=☣ 𝕭𝖔𝖍𝖆𝖙𝖎 ☣&avatar=63/6330c0531c83e7262767b52a29728f6801bcc289"
+                        target="_blank"> </button> ☣ 𝕭𝖔𝖍𝖆𝖙𝖎 ☣ </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('AK-47 | Panthera onca (Minimal Wear)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('AK-47 | Panthera onca (Minimal Wear)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('AK-47 | Panthera onca (Minimal Wear)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>AK-47 | Panthera onca (Minimal Wear)</td>
+                    <td>$332</td>
+					<td>2021-12-14 19:38:01.662976</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-04/04cc07a99e3499a337a0ada35d9db0be44f19e42-ShootTh3animal">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('04/04cc07a99e3499a337a0ada35d9db0be44f19e42', 'ShootTh3animal')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/04/04cc07a99e3499a337a0ada35d9db0be44f19e42.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=ShootTh3animal&avatar=04/04cc07a99e3499a337a0ada35d9db0be44f19e42"
+                        target="_blank"> </button> ShootTh3animal </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Huntsman Knife | Fade (Minimal Wear)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Huntsman Knife | Fade (Minimal Wear)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Huntsman Knife | Fade (Minimal Wear)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Huntsman Knife | Fade (Minimal Wear)</td>
+                    <td>$321</td>
+					<td>2021-12-14 19:36:09.357820</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-b8/b8284295ef65a26c6c8adb8ad1645e88015a3839-Makusa mat tvou ebal">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('b8/b8284295ef65a26c6c8adb8ad1645e88015a3839', 'Makusa mat tvou ebal')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b8/b8284295ef65a26c6c8adb8ad1645e88015a3839.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Makusa mat tvou ebal&avatar=b8/b8284295ef65a26c6c8adb8ad1645e88015a3839"
+                        target="_blank"> </button> Makusa mat tvou ebal </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Flip Knife | Gamma Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Flip Knife | Gamma Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Flip Knife | Gamma Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Flip Knife | Gamma Doppler (Factory New)</td>
+                    <td>$1563</td>
+					<td>2021-12-14 19:35:37.190863</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb-MYLOVEEXEX">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb', 'MYLOVEEXEX')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=MYLOVEEXEX&avatar=fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb"
+                        target="_blank"> </button> MYLOVEEXEX </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('Sticker | Flammable (Foil)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('Sticker | Flammable (Foil)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('Sticker | Flammable (Foil)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>Sticker | Flammable (Foil)</td>
+                    <td>$395</td>
+					<td>2021-12-14 19:32:26.705747</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-a1/a18325264da88d078566bf59df712fb6f8cc509d-toby">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('a1/a18325264da88d078566bf59df712fb6f8cc509d', 'toby')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a1/a18325264da88d078566bf59df712fb6f8cc509d.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=toby&avatar=a1/a18325264da88d078566bf59df712fb6f8cc509d"
+                        target="_blank"> </button> toby </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Talon Knife | Damascus Steel (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Talon Knife | Damascus Steel (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Talon Knife | Damascus Steel (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Talon Knife | Damascus Steel (Field-Tested)</td>
+                    <td>$338</td>
+					<td>2021-12-14 19:31:58.740013</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-a5/a5d84cc7e56070b3443a51a68b987d18104260d1-Kalle_Mecken">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('a5/a5d84cc7e56070b3443a51a68b987d18104260d1', 'Kalle_Mecken')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a5/a5d84cc7e56070b3443a51a68b987d18104260d1.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Kalle_Mecken&avatar=a5/a5d84cc7e56070b3443a51a68b987d18104260d1"
+                        target="_blank"> </button> Kalle_Mecken </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Bowie Knife | Case Hardened (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Bowie Knife | Case Hardened (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Bowie Knife | Case Hardened (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Bowie Knife | Case Hardened (Field-Tested)</td>
+                    <td>$519</td>
+					<td>2021-12-14 19:28:44.467731</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-30/30e18f7c150d0d73ab20481dbce0037a2b494aa3-Burki">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('30/30e18f7c150d0d73ab20481dbce0037a2b494aa3', 'Burki')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/30/30e18f7c150d0d73ab20481dbce0037a2b494aa3.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Burki&avatar=30/30e18f7c150d0d73ab20481dbce0037a2b494aa3"
+                        target="_blank"> </button> Burki </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ StatTrak™ Gut Knife | Tiger Tooth (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ StatTrak™ Gut Knife | Tiger Tooth (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ StatTrak™ Gut Knife | Tiger Tooth (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ StatTrak™ Gut Knife | Tiger Tooth (Factory New)</td>
+                    <td>$404</td>
+					<td>2021-12-14 19:28:27.763889</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-12/12d65d1eae254ce3d03fd222f6df865a57333b7b-SICARI0">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('12/12d65d1eae254ce3d03fd222f6df865a57333b7b', 'SICARI0')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/12/12d65d1eae254ce3d03fd222f6df865a57333b7b.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=SICARI0&avatar=12/12d65d1eae254ce3d03fd222f6df865a57333b7b"
+                        target="_blank"> </button> SICARI0 </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Butterfly Knife | Tiger Tooth (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Butterfly Knife | Tiger Tooth (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Butterfly Knife | Tiger Tooth (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Butterfly Knife | Tiger Tooth (Factory New)</td>
+                    <td>$1354</td>
+					<td>2021-12-14 19:28:01.578442</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-d6/d6d85f296a4a5490df0b1cf533e204a20500eaeb-vindiesel">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('d6/d6d85f296a4a5490df0b1cf533e204a20500eaeb', 'vindiesel')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d6/d6d85f296a4a5490df0b1cf533e204a20500eaeb.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=vindiesel&avatar=d6/d6d85f296a4a5490df0b1cf533e204a20500eaeb"
+                        target="_blank"> </button> vindiesel </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Classic Knife | Case Hardened (Minimal Wear)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Classic Knife | Case Hardened (Minimal Wear)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Classic Knife | Case Hardened (Minimal Wear)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Classic Knife | Case Hardened (Minimal Wear)</td>
+                    <td>$370</td>
+					<td>2021-12-14 19:27:56.961148</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-56/56950b90edc8c5ce9793a3056b0840a032209814-kass">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('56/56950b90edc8c5ce9793a3056b0840a032209814', 'kass')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/56/56950b90edc8c5ce9793a3056b0840a032209814.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=kass&avatar=56/56950b90edc8c5ce9793a3056b0840a032209814"
+                        target="_blank"> </button> kass </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Specialist Gloves | Marble Fade (Field-Tested)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Specialist Gloves | Marble Fade (Field-Tested)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Specialist Gloves | Marble Fade (Field-Tested)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Specialist Gloves | Marble Fade (Field-Tested)</td>
+                    <td>$383</td>
+					<td>2021-12-14 19:27:47.732182</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-bc/bc09f805eb44fda13bc6826b4e104a9513bb64c2-STELLA ARTOIS">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('bc/bc09f805eb44fda13bc6826b4e104a9513bb64c2', 'STELLA ARTOIS')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/bc/bc09f805eb44fda13bc6826b4e104a9513bb64c2.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=STELLA ARTOIS&avatar=bc/bc09f805eb44fda13bc6826b4e104a9513bb64c2"
+                        target="_blank"> </button> STELLA ARTOIS </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Bayonet | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Bayonet | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Bayonet | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Bayonet | Doppler (Factory New)</td>
+                    <td>$437</td>
+					<td>2021-12-14 19:24:18.978083</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-e2/e2be7e29799af20d8c9950b0d524e97eaf661eef-Willum Smooth">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('e2/e2be7e29799af20d8c9950b0d524e97eaf661eef', 'Willum Smooth')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/e2/e2be7e29799af20d8c9950b0d524e97eaf661eef.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Willum Smooth&avatar=e2/e2be7e29799af20d8c9950b0d524e97eaf661eef"
+                        target="_blank"> </button> Willum Smooth </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Karambit | Case Hardened (Battle-Scarred)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Karambit | Case Hardened (Battle-Scarred)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Karambit | Case Hardened (Battle-Scarred)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Karambit | Case Hardened (Battle-Scarred)</td>
+                    <td>$385</td>
+					<td>2021-12-14 19:24:12.628008</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-3e/3e419b699feda1d8a78457907af5271bf2c152db-The Doctor">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('3e/3e419b699feda1d8a78457907af5271bf2c152db', 'The Doctor')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/3e/3e419b699feda1d8a78457907af5271bf2c152db.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=The Doctor&avatar=3e/3e419b699feda1d8a78457907af5271bf2c152db"
+                        target="_blank"> </button> The Doctor </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('★ Talon Knife | Doppler (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('★ Talon Knife | Doppler (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('★ Talon Knife | Doppler (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>★ Talon Knife | Doppler (Factory New)</td>
+                    <td>$677</td>
+					<td>2021-12-14 19:20:46.267127</td>
+                </tr>
+                
+                <tr class="listing-row" id="lr-20/209be9f30b9dc7795ccf90e734d32fd2dad2f0c7-Dominic">
+                    <td class="avatar-cell"
+                        onclick="openAvatarFinder('20/209be9f30b9dc7795ccf90e734d32fd2dad2f0c7', 'Dominic')"
+                        style="background: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/20/209be9f30b9dc7795ccf90e734d32fd2dad2f0c7.jpg') no-repeat;">
+                    </td>
+                    <td 
+					    class="name-column"><a href="https://steamcommunity.com/search/users/#text=Dominic&avatar=20/209be9f30b9dc7795ccf90e734d32fd2dad2f0c7"
+                        target="_blank"> </button> Dominic </button> </a></td>
+                    <td>
+                        <button class="copy-text-button" onClick="copyTextEN('StatTrak™ AWP | Graphite (Factory New)')"><span>EN</span>
+						<img src="https://18.117.229.198/finder/img/en.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextCN('StatTrak™ AWP | Graphite (Factory New)')"><span>CN</span>
+						<img src="https://18.117.229.198/finder/img/cn.png"
+                        </button>
+						<button class="copy-text-button" onClick="copyTextRU('StatTrak™ AWP | Graphite (Factory New)')"><span>RU</span>
+						<img src="https://18.117.229.198/finder/img/ru.png"
+                        </button>
+                    </td>
+					<td>StatTrak™ AWP | Graphite (Factory New)</td>
+                    <td>$374</td>
+					<td>2021-12-14 19:20:09.660286</td>
+                </tr>
+                
+            </table>
+        </div>
+    <script>
+        const VISITED_LINK_DELIMINATOR = ',x,123,,123,x,'
+        const VISITED_LINKS_LS = 'visitedLinks'
+
+        const main = () => {
+            addSubmitListener()
+            styleVisitedListings()
+            // addButtonListener()
+        }
+
+        const copyTextEN = (text) => {
+            const preTextEN = "I'm interested in your items, add me."
+			const ouTextEN = " "
+            const copyTextEN = document.createElement('textArea')
+
+            copyTextEN.value = preTextEN
+            document.body.appendChild(copyTextEN)
+
+            copyTextEN.select()
+            copyTextEN.setSelectionRange(0, 99999)
+
+            document.execCommand('copy')
+            document.body.removeChild(copyTextEN)
+			
+        }
+		
+		const copyTextCN = (text) => {
+            const preTextCN = "我对你的东西感兴趣 加我吧"
+			const ouTextCN = " "
+            const copyTextCN = document.createElement('textArea')
+
+            copyTextCN.value = preTextCN
+            document.body.appendChild(copyTextCN)
+
+            copyTextCN.select()
+            copyTextCN.setSelectionRange(0, 99999)
+
+            document.execCommand('copy')
+            document.body.removeChild(copyTextCN)
+			
+        }
+		
+		const copyTextRU = (text) => {
+            const preTextRU = "Мне интересны ваши вещи, добавляйте меня."
+			const ouTextRU = " "
+            const copyTextRU = document.createElement('textArea')
+
+            copyTextRU.value = preTextRU
+            document.body.appendChild(copyTextRU)
+
+            copyTextRU.select()
+            copyTextRU.setSelectionRange(0, 99999)
+
+            document.execCommand('copy')
+            document.body.removeChild(copyTextRU)
+			
+        }
+
+        const addSubmitListener = () => {
+            var myForm = document.getElementById('search-form');
+            myForm.addEventListener('submit', function () {
+                var allInputs = myForm.getElementsByTagName('input');
+
+                for (var i = 0; i < allInputs.length; i++) {
+                    var input = allInputs[i];
+
+                    if (input.name && !input.value) {
+                        input.name = '';
+                    }
+                }
+            });
+        }
+
+        const openAvatarFinder = (avatar, name) => {
+            addToVisitedLinks(avatar, name)
+            openNewPage('/avatar-finder?avatar=' + avatar + '&name=' + name)
+        }
+
+        const addToVisitedLinks = (avatar, name) => {
+            let visitedLinks = localStorage.getItem(VISITED_LINKS_LS)
+            let linkId = avatar + '-' + name
+            if (visitedLinks) {
+                visitedLinks = visitedLinks.split(VISITED_LINK_DELIMINATOR)
+            } else {
+                visitedLinks = []
+            }
+
+            if (!visitedLinks.includes(linkId)) {
+                visitedLinks.push(linkId)
+                let linksToSave = '';
+                for (linkId of visitedLinks) {
+                    linksToSave += linkId + VISITED_LINK_DELIMINATOR
+                }
+                localStorage.setItem(VISITED_LINKS_LS, linksToSave.substr(0, linksToSave.length - VISITED_LINK_DELIMINATOR.length))
+                document.getElementById('lr-' + linkId).classList.add('visited')
+            }
+        }
+
+        const styleVisitedListings = () => {
+            visitedLinks = localStorage.getItem(VISITED_LINKS_LS)
+            if (!visitedLinks) {
+                return
+            }
+
+            visitedLinks = visitedLinks.split(VISITED_LINK_DELIMINATOR)
+            for (linkId of visitedLinks) {
+                let elem = document.getElementById('lr-' + linkId)
+                if (elem) {
+                    elem.classList.add('visited')
+                }
+            }
+        }
+
+        const addButtonListener = () => {
+            const btns = document.getElementsByClassName('user-count')
+            for (let btn of btns) {
+                btn.addEventListener('click', () => {
+                    if (btn.innerHTML == 'Wait') {
+                        return
+                    }
+                    btn.innerHTML = 'Wait'
+                    const xhttp = new XMLHttpRequest()
+
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            btn.innerHTML = this.responseText
+                        }
+                    }
+
+                    const username = btn.getAttribute('username')
+                    xhttp.open('GET', './user-count?name=' + username, true)
+                    xhttp.send()
+
+
+                })
+            }
+        }
+
+        const openNewPage = (link) => {
+            window.open(link, '_blank')
+        }
+    </script>
+</body>
+
+</html>
